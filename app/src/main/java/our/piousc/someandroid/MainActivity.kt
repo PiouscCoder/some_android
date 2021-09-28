@@ -1,11 +1,16 @@
 package our.piousc.someandroid
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import our.piousc.someandroid.base.BaseActivity
+import our.piousc.someandroid.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : BaseActivity<ActivityMainBinding>() {
+
+
+    override fun onCreateConfigured(savedInstanceState: Bundle?) {
+        mViewBinding?.tvText?.setOnClickListener {
+            Toast.makeText(this, "onClick", Toast.LENGTH_SHORT).show()
+        }
     }
 }
